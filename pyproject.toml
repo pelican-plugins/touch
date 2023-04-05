@@ -33,18 +33,17 @@ pelican = ">=4.5"
 markdown = {version = ">=3.2", optional = true}
 
 [tool.poetry.dev-dependencies]
-black = {version = "^19.10b0", allow-prereleases = true}
-flake8 = "^3.8"
-flake8-black = "^0.2.0"
-invoke = "^1.3"
-isort = "^5.4"
+black = "^23"
+flake8 = "^6.0"
+flake8-black = "^0.3"
+flake8-pyproject = "^1.2"
+invoke = "^2.0"
+isort = "^5.12"
 livereload = "^2.6"
-markdown = "^3.2.2"
-pytest = "^6.0"
-pytest-cov = "^2.8"
-pytest-pythonpath = "^0.7.3"
-pytest-sugar = "^0.9.4"
-Werkzeug = "^1.0"
+markdown = "^3.4"
+pytest = "^7.0"
+pytest-cov = "^4.0"
+pytest-sugar = "^0.9"
 
 [tool.poetry.extras]
 markdown = ["markdown"]
@@ -55,9 +54,13 @@ git-username = "botpub"
 git-email = "botpub@autopub.rocks"
 append-github-contributor = true
 
+[tool.flake8]
+extend-ignore = ["E203"]
+max-line-length = 88
+
 [tool.isort]
-# Maintain compatibility with Black
 profile = "black"
+combine_as_imports = true
 multi_line_output = 3
 
 # Sort imports within their section independent of the import type
