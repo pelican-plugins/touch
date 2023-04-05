@@ -5,7 +5,7 @@ Touch: A Plugin for Pelican
 [![PyPI Version](https://img.shields.io/pypi/v/pelican-touch)](https://pypi.org/project/pelican-touch/)
 ![License](https://img.shields.io/pypi/l/pelican-touch?color=blue)
 
-Set date on generated files based on metadata from content
+This Pelican plugin sets the date on generated files based on source content `Date:` metadata.
 
 Installation
 ------------
@@ -17,9 +17,9 @@ This plugin can be installed via:
 Usage
 -----
 
-A simple plugin doing a touch on your generated files using the date metadata from the content.
+This plugin performs `touch` on your generated files, using the date metadata from the source content.
 
-This helps, into other things, to have the web server gently manage the cache.
+This helps, among other things, to guide the web server regarding how to handle its cache.
 
 Contributing
 ------------
