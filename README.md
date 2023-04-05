@@ -1,7 +1,7 @@
 Touch: A Plugin for Pelican
 ===========================
 
-[![Build Status](https://img.shields.io/github/workflow/status/pelican-plugins/touch/build)](https://github.com/pelican-plugins/touch/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/pelican-plugins/touch/main.yml?branch=main)](https://github.com/pelican-plugins/touch/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/pelican-touch)](https://pypi.org/project/pelican-touch/)
 ![License](https://img.shields.io/pypi/l/pelican-touch?color=blue)
 
