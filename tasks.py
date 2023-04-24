@@ -1,10 +1,13 @@
 from inspect import cleandoc
+import logging
 import os
 from pathlib import Path
 from shutil import which
 import sys
 
 from invoke import task
+
+logger = logging.getLogger(__name__)
 
 PKG_NAME = "touch"
 PKG_PATH = Path(f"pelican/plugins/{PKG_NAME}")
@@ -20,7 +23,7 @@ TOOLS = ("poetry", "pre-commit")
 POETRY = which("poetry") if which("poetry") else (VENV_BIN / "poetry")
 CMD_PREFIX = f"{VENV_BIN}/" if ACTIVE_VENV else f"{POETRY} run "
 PRECOMMIT = which("pre-commit") if which("pre-commit") else f"{CMD_PREFIX}pre-commit"
-PTY = True if os.name != "nt" else False
+PTY = os.name != "nt"
 
 
 @task
@@ -80,7 +83,7 @@ def setup(c):
         c.run(f"{CMD_PREFIX}python -m pip install --upgrade pip")
         c.run(f"{POETRY} install")
         precommit(c)
-        print("\nDevelopment environment should now be set up and ready!\n")
+        logger.info("\nDevelopment environment should now be set up and ready!\n")
     else:
         error_message = """
             Poetry is not installed, and there is no active virtual environment available.

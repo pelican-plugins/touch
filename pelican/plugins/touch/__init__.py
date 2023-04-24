@@ -1,1 +1,1 @@
-from .touch import *  # NOQA
+from .touch import *  # noqa: F403
