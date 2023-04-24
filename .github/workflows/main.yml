@@ -17,6 +17,7 @@ jobs:
         uses: JustinBeckwith/linkinator-action@v1
         with:
           retry: true
+          linksToSkip: "https://pypi.org/project/pelican-touch/"
 
       - name: Set up Python
         uses: actions/setup-python@v4
