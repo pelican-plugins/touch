@@ -1,0 +1,96 @@
+[tool.poetry]
+name = "pelican-touch"
+version = "0.0.0"
+description = "Set date on generated files based on metadata from content"
+authors = ["Pelican Dev Team <authors@getpelican.com>"]
+license = "AGPL-3.0"
+readme = "README.md"
+keywords = ["pelican", "plugin", "touch"]
+repository = "https://github.com/pelican-plugins/touch"
+documentation = "https://docs.getpelican.com"
+packages = [
+    { include = "pelican" },
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Framework :: Pelican",
+    "Framework :: Pelican :: Plugins",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.urls]
+"Funding" = "https://donate.getpelican.com/"
+"Issue Tracker" = "https://github.com/pelican-plugins/touch/issues"
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4.0"
+pelican = ">=4.5"
+markdown = {version = ">=3.2", optional = true}
+
+[tool.poetry.group.dev.dependencies]
+black = "^23"
+invoke = "^2.0"
+markdown = "^3.4"
+ruff = ">=0.0.262"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.0"
+pytest-sugar = "^0.9"
+
+[tool.poetry.extras]
+markdown = ["markdown"]
+
+[tool.autopub]
+project-name = "Touch"
+git-username = "botpub"
+git-email = "botpub@autopub.rocks"
+append-github-contributor = true
+
+[tool.ruff]
+select = [
+  "B",   # flake8-bugbear
+  "BLE", # flake8-blind-except
+  "C4",  # flake8-comprehensions
+  "D",   # pydocstyle
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "I",   # isort
+  "ICN", # flake8-import-conventions
+  "ISC", # flake8-implicit-str-concat
+  "PGH", # pygrep-hooks
+  "PL",  # pylint
+  "RET", # flake8-return
+  "RUF", # ruff-specific rules
+  "SIM", # flake8-simplify
+  "T10", # flake8-debugger
+  "T20", # flake8-print
+  "TID", # flake8-tidy-imports
+  "TRY", # tryceratops
+  "UP",  # pyupgrade
+  "W",   # pycodestyle
+  "YTT", # flake8-2020
+]
+
+ignore = [
+  "D100",    # missing docstring in public module
+  "D104",    # missing docstring in public package
+  "D203",    # blank line before class docstring
+  "D213",    # multi-line docstring summary should start at the second line
+]
+
+target-version = "py38"
+
+[tool.ruff.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = ["pelican"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
