@@ -36,7 +36,7 @@ markdown = {version = ">=3.2", optional = true}
 black = "^23"
 invoke = "^2.0"
 markdown = "^3.4"
-ruff = ">=0.0.262"
+ruff = ">=0.0.275"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.0"
